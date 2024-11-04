@@ -1,0 +1,6 @@
+import './style/resets.scss'
+import './style/base.scss'
+import './style/footer.scss'
+import './style/form.scss'
+import './style/header.scss'
+import './style/style.scss'

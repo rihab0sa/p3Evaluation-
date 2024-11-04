@@ -1,0 +1,94 @@
+@use 'sass:color'; // Importing the color module
+
+// Variables
+$primary-color: #5535aa;
+$secondary-color: #f2f2f2;
+$text-color: #333;
+$font-family: 'Arial', sans-serif;
+$border-radius: 5px;
+$padding: 15px;
+
+// Global Styles
+body {
+  font-family: $font-family;
+  background-color: $secondary-color;
+  color: $text-color;
+  margin: 0;
+  padding: 20px;
+}
+
+main {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background: white;
+  border-radius: $border-radius;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+// Container Styles
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+// Form Styles
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  label {
+    font-weight: bold;
+  }
+
+  input[type="text"] {
+    padding: $padding;
+    border: 1px solid $text-color;
+    border-radius: $border-radius;
+    font-size: 16px;
+
+    &:focus {
+      border-color: $primary-color;
+      outline: none;
+    }
+  }
+
+  .btn-submit {
+    background-color: $primary-color;
+    color: white;
+    padding: $padding;
+    border: none;
+    border-radius: $border-radius;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: color.adjust($primary-color, $lightness: -10%);
+    }
+  }
+}
+
+// Results Section Styles
+section {
+  padding: $padding;
+  background-color: $secondary-color;
+  border-radius: $border-radius;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+  
+  strong {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 18px;
+  }
+
+  div {
+    margin: 5px 0;
+    padding: 10px;
+    border: 1px solid $text-color;
+    border-radius: $border-radius;
+    background-color: white;
+  }
+}
