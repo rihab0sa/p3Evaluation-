@@ -1,44 +1,12 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8" />
-    <title>Evluation(nlp)</title>
-  <script defer src="main.js"></script></head>
-
-  <body>
-    <main>
-      <div class="container">
-        <p>Enter a URL of an article:.</p>
-        <section>
-          <form id="form">
-            <label for="article-url">URL</label>
-            <input id="article-url" type="text" name="input" value="" placeholder="Enter Article URL here" />
-            <button
-              type="submit"
-              class="btn-submit"
-            >
-              Submit
-            </button>
-          </form>
-        </section>
-
-        <section>
-          <strong>Form Results:</strong>
-          <div id="text"></div>
-          <div id="agreement"></div>
-          <div id="subjectivity"></div>
-          <div id="confidence"></div>
-          <div id="irony"></div>
-          <div id="score_tag"></div>
-        </section>
-      </div>
-    </main>
-    <script>
-    //if ('serviceWorker' in navigator) {
-     // window.addEventListener('load', () => {
-         //navigator.serviceWorker.register('/service-worker.js')
-       // })
-   // }
-    </script>
-  </body>
-</html>
+<!doctype html><html lang="en" dir="ltr"><head><meta charset="utf-8"/><script src="https://kit.fontawesome.com/c7626b9cd3.js" crossorigin="anonymous"></script><title>Evaluation (NLP)</title><link rel="stylesheet" href="styles.css"><script defer="defer" src="bundle.82b2ae1c6912a075c06d.js"></script><link href="style.0eef5c27f886c248ac6a.css" rel="stylesheet"></head><body><main><div class="container"><p>Enter a URL of an article:</p><section><form onsubmit="return Client.handleSubmit(event)"><label for="article-url">URL</label> <input id="article-url" name="input" value="" placeholder="Enter Article URL here" required/> <button type="submit" class="btn-submit">Submit</button></form></section><section><p id="error"></p></section><section><strong id="results">Form Results:</strong><div id="agreement"></div><div id="subjectivity"></div><div id="confidence"></div><div id="irony"></div><div id="score_tag"></div></section></div></main><script>// Register the Service Worker
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/service-worker.js') // Ensure the path is correct
+            .then(registration => {
+              console.log('Service Worker registered with scope:', registration.scope);
+            })
+            .catch(error => {
+              console.error('Service Worker registration failed:', error);
+            });
+        });
+      }</script></body></html>

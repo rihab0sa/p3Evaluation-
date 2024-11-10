@@ -1,0 +1,40 @@
+# _Evaluate A News Article with Natural Language Processing_
+
+****### project description_****
+
+This project aims to build a web tool that allows users to run Natural Language Processing (NLP) on articles or blogs found on other websites. When a user submits a URL of an article, the web page then dispalys sentiment analysis returned from meaningcloud API, based on the contents of the article.
+
+Open browser at <http://localhost:8081/>.
+
+**### _Build Tools:_**
+
+- HTML
+- CSS
+- JavaScript
+- Webpack
+- Node
+- Express
+- meaningcloud API
+
+**### _How-to run the app And Installation:_**
+
+- install npm from the terminal
+ npm -v
+- open the project folder
+cd p33>..
+- IInstall pakes we need.
+npm i -D @babel/core @babel/preset-env babel-loader
+npm i -D style-loader node-sass css-loader sass-loader
+npm i -D clean-webpack-plugin
+npm i -D html-webpack-plugin
+npm i -D mini-css-extract-plugin
+npm i -D optimize-css-assets-webpack-plugin terser-webpack-plugin
+
+## Testing the code with Jest
+
+Install Jest npm install --save-dev jest
+
+## Bugs
+
+There may be an error when adding a link due to the location
+But the code is correct.
