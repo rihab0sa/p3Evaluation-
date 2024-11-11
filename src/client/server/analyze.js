@@ -1,22 +1,34 @@
+require('dotenv').config(); 
 const axios = require('axios');
+
+// Load PROXY_PORT from environment variables or set a default value
+const PROXY_PORT = process.env.PROXY_PORT || 8000; 
+const PROXY_HOST = process.env.PROXY_HOST; 
+
+// Check if PROXY_HOST is defined
+if (!PROXY_HOST) {
+    console.error('PROXY_HOST is not defined in the .env file');
+    process.exit(1); // Exit if PROXY_HOST is not set
+}
+
 const meaningCloud = "https://api.meaningcloud.com/sentiment-2.1";
 const axiosInstance = axios.create({
-    baseURL: 'https://api.meaningcloud.com/sentiment-2.1',
+    baseURL: meaningCloud,
     proxy: {
-        host: 'PROXY_HOST',
+        host: PROXY_HOST,
         port: PROXY_PORT,
         // If your proxy requires authentication
         auth: {
-            username: 'USERNAME',
-            password: 'PASSWORD'
+            username: process.env.PROXY_USERNAME, 
+            password: process.env.PROXY_PASSWORD  
         }
     }
 });
 
 const analyze = async (url, key) => {
     try {
-        // Make the API request
-        const response = await axios.get(`${meaningCloud}?key=${key}&url=${url}&lang=en`);
+        // the API request
+        const response = await axiosInstance.get(`?key=${key}&url=${url}&lang=en`);
         
         // Destructure the response to get the status code and message
         const { code, msg } = response.data.status;
@@ -49,7 +61,6 @@ const analyze = async (url, key) => {
 };
 
 const handleErrors = (code, msg) => {
-    // Create an error object
     const error = { code, msg };
     return error;
 };

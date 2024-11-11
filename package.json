@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "bundle.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "start": "nodemon src/client/server/index.js",
     "dev": "webpack-dev-server --config webpack.dev.js --open",
     "build": "webpack --config webpack.production.js"
@@ -44,6 +44,7 @@
     "axios": "^1.7.7",
     "clean-webpack-plugin": "^4.0.0",
     "express": "^4.21.1",
+    "jest": "^29.7.0",
     "scss": "^0.2.4",
     "valid-url": "^1.0.9",
     "vm-browserify": "^1.1.2"
